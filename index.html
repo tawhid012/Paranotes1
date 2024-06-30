@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paranotes</title>
+    <style>
+   
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #b31010;
+        }
+        .menu-button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .menu {
+            display:
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .menu a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #000;
+        }
+        .menu a:hover {
+            background-color: #f4f4f4;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: #fff;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+            color: #6c2831;
+        }
+        .mission-section {
+            background-color: #fff;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .mission-title {
+            font-size: 36px;
+            color: #b31010;
+            margin-bottom: 20px;
+        }
+        .mission-content {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+            text-align: left;
+        }
+        .mission-content strong {
+            font-weight: bold;
+        }
+        .stats-section {
+            padding: 50px 20px;
+            align-items: center;
+        }
+        .stat-item {
+            background-color: #fff;
+            padding: 30px 20px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 200px;
+        }
+        .stat-item i {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #6c2831;
+        }
+        .stat-number {
+            font-size: 48px;
+            color: #b31010;
+            margin: 0;
+        }
+        .stat-label {
+            font-size: 18px;
+            color: #333333;
+        }
+        
+
+.slider {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+footer {
+    background-color: #0a1931;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    margin: 10px;
+}
+
+.column h3 {
+    border-bottom: 2px solid white;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.column ul li {
+    margin: 5px 0;
+}
+
+.column ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.column form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column form input {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.column form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f39c12;
+    color: white;
+    cursor: pointer;
+}
+
+.social-media {
+    margin: 20px 0;
+}
+
+.social-media a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    border-top: 1px solid white;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="header">
+        <div class="logo">PARANOTES</div>
+        <button class="menu-button" onclick="toggleMenu()">☰</button>
+        <div class="menu" id="menu">
+            <a href="/main/login.html">Login</a>
+            <a href="#">Contact Us</a>
+            <!-- Add more menu items here if needed -->
+        </div>
+    </div>
+
+    <div class="hero">
+        <img src="/img/african-student-sitting-in-classroom.jpg" alt="Engagement">
+        <div class="hero-text">Engagement</div>
+    </div>
+
+    <div class="content">
+        <p>UNDER NEWS YOU WILL FIND INFORMATION ABOUT OUR NEXT INFO EVENING, CURRENT TOPICS AND ALSO A REVIEW OF PAST EVENTS.</p>
+    </div>
+
+    <div class="mission-section">
+        <div class="mission-title">OUR MISSION</div>
+        <div class="mission-content">
+            <p>Provide a <strong>high quality</strong> international education for children of all nationalities from Early Years to Grade 12 with English as the language of instruction.</p>
+            <p>Prepare students to become <strong>global citizens</strong> through a commitment to the development of the whole child, both as an individual and as a member of the community.</p>
+        </div>
+    </div>
+<h1 font-color="#b31010" align="center">Stats</h1>
+    <div class="stats-section">
+        <div class="stat-item">
+            <i class="fas fa-chart-line"></i>
+            <p class="stat-number" id="students">0</p>
+            <p class="stat-label">Total student number</p>
+        </div>
+        <div class="stat-item">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <p class="stat-number" id="Ib">100</p>
+            <p class="stat-label">IB Pass rate in percent</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-chart-line"></i>
+            <p class="stat-number" id="nationalities">0</p>
+            <p class="stat-label">Student Nationalities</p>
+        </div>
+    </div>
+     <h1 align="center">Gallery</h1>
+    <div class="slider">
+        <div class="slides">
+         
+            <img src="/img/african-student-sitting-in-classroom.jpg" class="slide">
+            <img src="image2.jpg" class="slide">
+            <img src="image3.jpg" class="slide">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    
+    
+    <footer>
+        <div class="container">
+            <div class="column">
+                <h3>Service</h3>
+                <ul>
+                    <li><a href="#">Training</a></li>
+                    <li><a href="#">Coaching</a></li>
+                    <li><a href="#">Consulting</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Email Address">
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p>Mobile: 9531428394</p>
+                <p>Email: paramountjuniorcollege@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Tawhid Laskar. All rights reserved</p>
+            <p>Paramount Senior Secondary School</p>
+        </div>
+    </footer>
+
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+        function animateValue(id, start, end, duration) {
+            let range = end - start;
+            let current = start;
+            let increment = end > start ? 1 : -1;
+            let stepTime = Math.abs(Math.floor(duration / range));
+            let obj = document.getElementById(id);
+            let timer = setInterval(function() {
+                current += increment;
+                obj.innerHTML = current;
+                if (current == end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+
+        window.onload = function() {
+            animateValue("students", 0, 1500, 1000);
+            animateValue("nationalities", 0, 90, 7100);
+                        animateValue("Ib", 0, 1500, 1000);
+        }
+        
+        let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    slideIndex = (index + totalSlides) % totalSlides;
+    document.querySelector('.slides').style.transform = `translateX(-${slideIndex * 100}%)`;
+}
+
+function nextSlide() {
+    showSlide(slideIndex + 1);
+}
+
+function prevSlide() {
+    showSlide(slideIndex - 1);
+}
+
+setInterval(nextSlide, 5000);
+
+document.addEventListener('DOMContentLoaded', () => {
+    showSlide(slideIndex);
+});
+    </script>
+</body>
+                                               </html>
