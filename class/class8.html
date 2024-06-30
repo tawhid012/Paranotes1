@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Download Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh; /* Ensure the body takes up full height of the viewport */
+            overflow: hidden; /* Prevent scrolling on the body */
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            background-color: #ffcccc;
+            width: 45%;
+            padding: 30px;
+            box-sizing: border-box;
+            position: fixed; /* Make the sidebar fixed */
+            height: 100%;
+            overflow-y: auto; /* Enable scrolling for the sidebar */
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+        }
+
+        .content {
+            background-color: #f2f2f2;
+            margin-left: 50%; /* Adjust content margin to match sidebar width */
+            padding: 20px;
+            box-sizing: border-box;
+            width: 50%;
+            height: 100vh;
+            overflow-y: auto; /* Enable scrolling for the content */
+        }
+
+        .subject-section {
+            margin-bottom: 20px;
+        }
+
+        .chapter {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .chapter-title {
+            font-size: 20px;
+        }
+
+        .submit {
+            background-color: orange;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            display: block;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .download-link {
+            display: block;
+            background-color: orange;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+
+        .download-link:hover {
+            background-color: darkorange;
+        }
+    </style>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Select Subject</h2>
+            <form id="subjectForm">
+                <label><input type="radio" name="subject" value="#english"> English</label><br>
+                <label><input type="radio" name="subject" value="#computer"> Computer</label><br>
+                <label><input type="radio" name="subject" value="#science"> Science</label><br>
+                <label><input type="radio" name="subject" value="#social-science"> S.S.T</label><br>
+                <label><input type="radio" name="subject" value="#bengali"> Bengali</label><br>
+                <label><input type="radio" name="subject" value="#hindi"> Hindi</label><br>
+                <label><input type="radio" name="subject" value="#gk"> GK</label><br>
+                <label><input type="radio" name="subject" value="#v-edu"> V. Edu</label><br>
+                <button class="submit" type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="content">
+            <div id="english" class="subject-section">
+                <h2>English</h2>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 1</div>
+                    <a href="/Phrases-and-Clauses.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 2</div>
+                    <a href="link_to_english_chapter2.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 3</div>
+                    <a href="link_to_english_chapter3.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 4</div>
+                    <a href="link_to_english_chapter4.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 5</div>
+                    <a href="link_to_english_chapter5.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 6</div>
+                    <a href="link_to_english_chapter6.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 7</div>
+                    <a href="link_to_english_chapter7.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 8</div>
+                    <a href="link_to_english_chapter8.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 9</div>
+                    <a href="link_to_english_chapter9.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 10</div>
+                    <a href="link_to_english_chapter10.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 11</div>
+                    <a href="link_to_english_chapter11.pdf" class="download-link">Download</a>
+                </div>
+            </div>
+            <div id="computer" class="subject-section">
+                <h2>Computer</h2>
+                <!-- Add 11 chapters for Computer -->
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 1</div>
+                    <a href="link_to_computer_chapter1.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 2</div>
+                    <a href="link_to_computer_chapter2.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 3</div>
+                    <a href="link_to_computer_chapter3.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 4</div>
+                    <a href="link_to_computer_chapter4.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 5</div>
+                    <a href="link_to_computer_chapter5.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 6</div>
+                    <a href="link_to_computer_chapter6.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 7</div>
+                    <a href="link_to_computer_chapter7.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 8</div>
+                    <a href="link_to_computer_chapter8.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 9</div>
+                    <a href="link_to_computer_chapter9.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 10</div>
+                    <a href="link_to_computer_chapter10.pdf" class="download-link">Download</a>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 11</div>
+                    <a href="link_to_computer_chapter11.pdf" class="download-link">Download</a>
+                </div>
+            </div>
+            <div id="science" class="subject-section">
+                <h2>Science</h2>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 1</div>
+                    <a href="link_to_science_chapter1.pdf" class="download-link">Download</a>
+                </div>
+            </div>
+            <div id="social-science" class="subject-section">
+                <h2>Social Science</h2>
+                <div class="chapter">
+                    <div class="chapter-title">Chapter 1</div>
+                    <a href="link_to_social_science_chapter1.pdf" class="download-link">Download</a>
+                </div>
+            </div>
+<div id="bengali" class="subject-section">
+    <h2>Bengali</h2>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 1</div>
+        <a href="link_to_bengali_chapter1.pdf" class="download-link">Download </a>
+    </div>
+</div>
+<div id="hindi" class="subject-section">
+    <h2>Hindi</h2>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 1</div>
+        <a href="link_to_hindi_chapter1.pdf" class="download-link">Download</a>
+    </div>
+</div>
+<div id="gk" class="subject-section">
+    <h2>GK</h2>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 1</div>
+        <a href="link_to_gk_chapter1.pdf" class="download-link">Download</a>
+    </div>
+</div>
+<div id="v-edu" class="subject-section">
+    <h2>V. Edu</h2>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 1</div>
+        <a href="link_to_v_edu_chapter1.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 2</div>
+        <a href="link_to_v_edu_chapter2.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 3</div>
+        <a href="link_to_v_edu_chapter3.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 4</div>
+        <a href="link_to_v_edu_chapter4.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 5</div>
+        <a href="link_to_v_edu_chapter5.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 6</div>
+        <a href="link_to_v_edu_chapter6.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 7</div>
+        <a href="link_to_v_edu_chapter7.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 8</div>
+        <a href="link_to_v_edu_chapter8.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 9</div>
+        <a href="link_to_v_edu_chapter9.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 10</div>
+        <a href="link_to_v_edu_chapter10.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 11</div>
+        <a href="link_to_v_edu_chapter11.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 12</div>
+        <a href="link_to_v_edu_chapter12.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 13</div>
+        <a href="link_to_v_edu_chapter13.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 14</div>
+        <a href="link_to_v_edu_chapter14.pdf" class="download-link">Download</a>
+    </div>
+    <div class="chapter">
+        <div class="chapter-title">Chapter 15</div>
+        <a href="link_to_v_edu_chapter15.pdf" class="download-link">Download</a>
+    </div>
+</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('subjectForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const selectedSubject = document.querySelector('input[name="subject"]:checked').value;
+            window.location.href = selectedSubject;
+        });
+
+        document.querySelectorAll('.download-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const pdfLink = this.getAttribute('data-pdf');
+                window.location.href = pdfLink;
+            });
+        });
+    </script>
+</body>
+  </html>
