@@ -8,69 +8,100 @@
 </head>
 <body>
 
-<div class="sidebar">
-    <h2>Subjects</h2>
-    <ul>
-        <li><i class="icon"></i><a href="#english-form">English</a></li>
-        <li><i class="icon"></i><a href="#computer-form">Computer</a></li>
-        <li><i class="icon"></i><a href="#science-form">Science</a></li>
-        <!-- Add more subjects as needed -->
-    </ul>
-</div>
-
-<div class="content">
-    <h2>Subject Forms</h2>
-
-    <!-- English Form -->
-    <div id="english-form">
-        <h3>English</h3>
-        <form action="" method="GET" onsubmit="redirectToPDF(this)">
-            <label for="english-chapter">Select Chapter:</label>
-            <select id="english-chapter" name="chapter">
-                <option value="/class8/english_chapter_1.pdf">Chapter 1</option>
-                <option value="/class8/english_chapter_2.pdf">Chapter 2</option>
-                <option value="/class8/english_chapter_3.pdf">Chapter 3</option>
-                <!-- Add more chapters -->
-            </select>
-            <button type="submit">Go to PDF</button>
-        </form>
+<div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="toggle" id="toggle" onclick="toggleSidebar()">&#x2190;</div>
+        <h2>Subjects</h2>
+        <ul>
+            <li onclick="showForm('english-form')"><i class="icon"></i> English</li>
+            <li onclick="showForm('computer-form')"><i class="icon"></i> Computer</li>
+            <li onclick="showForm('science-form')"><i class="icon"></i> Science</li>
+            <!-- Add more subjects -->
+        </ul>
     </div>
 
-    <!-- Computer Form -->
-    <div id="computer-form">
-        <h3>Computer</h3>
-        <form action="" method="GET" onsubmit="redirectToPDF(this)">
-            <label for="computer-chapter">Select Chapter:</label>
-            <select id="computer-chapter" name="chapter">
-                <option value="/class8/computer_chapter_1.pdf">Chapter 1</option>
-                <option value="/class8/computer_chapter_2.pdf">Chapter 2</option>
-                <option value="/class8/computer_chapter_3.pdf">Chapter 3</option>
-                <!-- Add more chapters -->
-            </select>
-            <button type="submit">Go to PDF</button>
-        </form>
+    <!-- Content Area -->
+    <div class="content" id="content">
+        <h2>Select a Subject to View Notes</h2>
+
+        <!-- English Form -->
+        <div id="english-form" class="form hidden">
+            <h3>English</h3>
+            <form action="" method="GET" onsubmit="redirectToPDF(this)">
+                <label for="english-chapter">Select Chapter:</label>
+                <select id="english-chapter" name="chapter">
+                    <option value="/class8/english_chapter_1.pdf">Chapter 1</option>
+                    <option value="/class8/english_chapter_2.pdf">Chapter 2</option>
+                    <option value="/class8/english_chapter_3.pdf">Chapter 3</option>
+                    <!-- Add more chapters -->
+                </select>
+                <button type="submit">Go to PDF</button>
+            </form>
+        </div>
+
+        <!-- Computer Form -->
+        <div id="computer-form" class="form hidden">
+            <h3>Computer</h3>
+            <form action="" method="GET" onsubmit="redirectToPDF(this)">
+                <label for="computer-chapter">Select Chapter:</label>
+                <select id="computer-chapter" name="chapter">
+                    <option value="/class8/computer_chapter_1.pdf">Chapter 1</option>
+                    <option value="/class8/computer_chapter_2.pdf">Chapter 2</option>
+                    <option value="/class8/computer_chapter_3.pdf">Chapter 3</option>
+                    <!-- Add more chapters -->
+                </select>
+                <button type="submit">Go to PDF</button>
+            </form>
+        </div>
+
+        <!-- Science Form -->
+        <div id="science-form" class="form hidden">
+            <h3>Science</h3>
+            <form action="" method="GET" onsubmit="redirectToPDF(this)">
+                <label for="science-chapter">Select Chapter:</label>
+                <select id="science-chapter" name="chapter">
+                    <option value="/class8/science_chapter_1.pdf">Chapter 1</option>
+                    <option value="/class8/science_chapter_2.pdf">Chapter 2</option>
+                    <option value="/class8/science_chapter_3.pdf">Chapter 3</option>
+                    <!-- Add more chapters -->
+                </select>
+                <button type="submit">Go to PDF</button>
+            </form>
+        </div>
+
+        <!-- More forms for other subjects -->
     </div>
-
-    <!-- Science Form -->
-    <div id="science-form">
-        <h3>Science</h3>
-        <form action="" method="GET" onsubmit="redirectToPDF(this)">
-            <label for="science-chapter">Select Chapter:</label>
-            <select id="science-chapter" name="chapter">
-                <option value="/class8/science_chapter_1.pdf">Chapter 1</option>
-                <option value="/class8/science_chapter_2.pdf">Chapter 2</option>
-                <option value="/class8/science_chapter_3.pdf">Chapter 3</option>
-                <!-- Add more chapters -->
-            </select>
-            <button type="submit">Go to PDF</button>
-        </form>
-    </div>
-
-    <!-- Add more forms for other subjects similarly -->
-
 </div>
 
 <script>
+// Function to toggle the sidebar
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+    const toggleButton = document.getElementById('toggle');
+
+    if (sidebar.classList.contains('collapsed')) {
+        sidebar.classList.remove('collapsed');
+        content.classList.remove('expanded');
+        toggleButton.innerHTML = '&#x2190;'; // Arrow left
+    } else {
+        sidebar.classList.add('collapsed');
+        content.classList.add('expanded');
+        toggleButton.innerHTML = '&#x2192;'; // Arrow right
+    }
+}
+
+// Function to show specific form
+function showForm(formId) {
+    // Hide all forms
+    const forms = document.querySelectorAll('.form');
+    forms.forEach(form => form.classList.add('hidden'));
+
+    // Show the selected form
+    document.getElementById(formId).classList.remove('hidden');
+}
+
 // Function to redirect based on selected chapter
 function redirectToPDF(form) {
     const chapter = form.chapter.value;
@@ -80,4 +111,4 @@ function redirectToPDF(form) {
 </script>
 
 </body>
-</html>
+    </html>
