@@ -3,336 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subject Download Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
- <!---   <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            min-height: 100vh;
-            background-color: #f0f0f0;
-        }
-
-        .sidebar {
-            background-color: #333;
-            color: white;
-            width: 250px;
-            transition: width 0.3s;
-            overflow: hidden;
-        }
-
-        .sidebar.collapsed {
-            width: 80px;
-        }
-
-        .sidebar h2 {
-            text-align: center;
-            padding: 15px;
-            background-color: #444;
-        }
-
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .sidebar ul li {
-            padding: 15px;
-            cursor: pointer;
-            text-align: left;
-        }
-
-        .sidebar ul li:hover {
-            background-color: #555;
-        }
-
-        .sidebar ul li i {
-            margin-right: 15px;
-        }
-
-        .toggle-btn {
-            position: absolute;
-            top: 15px;
-            left: 250px;
-            cursor: pointer;
-        }
-
-        .toggle-btn.collapsed {
-            left: 80px;
-        }
-
-        .content {
-            flex-grow: 1;
-            padding: 20px;
-            background-color: white;
-            margin-left: 250px;
-            transition: margin-left 0.3s;
-        }
-
-        .content.collapsed {
-            margin-left: 80px;
-        }
-
-        .subject-section h2 {
-            margin-bottom: 20px;
-        }
-
-        .chapter {
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chapter-title {
-            font-size: 18px;
-        }
-
-        .download-link {
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .download-link:hover {
-            background-color: #0056b3;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 80px;
-            }
-
-            .toggle-btn {
-                left: 80px;
-            }
-
-            .content {
-                margin-left: 80px;
-            }
-
-            .content.collapsed {
-                margin-left: 0;
-            }
-        }
-    </style> -->
-<style>
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    min-height: 100vh;
-    background-color: #f0f0f0;
-}
-
-.sidebar {
-    background-color: #333;
-    color: white;
-    width: 250px;
-    transition: width 0.3s;
-    overflow: hidden;
-}
-
-.sidebar.collapsed {
-    width: 80px;
-}
-
-.sidebar h2 {
-    text-align: center;
-    padding: 15px;
-    background-color: #444;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    padding: 15px;
-    cursor: pointer;
-    text-align: left;
-}
-
-.sidebar ul li:hover {
-    background-color: #555;
-}
-
-.sidebar ul li i {
-    margin-right: 15px;
-}
-
-.toggle-btn {
-    position: absolute;
-    top: 15px;
-    left: 250px;
-    cursor: pointer;
-
-
-.content {
-    flex-grow: 1;
-    padding: 20px;
-    background-color: white;
-    margin-left: 250px;
-    transition: margin-left 0.3s;
-}
-
-.content.collapsed {
-    margin-left: 80px;
-}
-
-.subject-section h2 {
-    margin-bottom: 20px;
-}
-
-.chapter {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.chapter-title {
-    font-size: 18px;
-}
-
-.download-link {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.download-link:hover {
-    background-color: #0056b3;
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 80px;
-    }
-
-    .toggle-btn {
-        left: 80px;
-    }
-
-    .content {
-        margin-left: 80px;
-    }
-
-    .content.collapsed {
-        margin-left: 0;
-    }
-
-    .chapter {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .download-link {
-        margin-top: 10px;
-        align-self: flex-end;
-    }
-}
-</style>
+    <title>Class 8 Notes</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="sidebar" id="sidebar">
-        <h2>Subjects</h2>
-        <ul>
-            <li data-subject="english"><i class="fas fa-book"></i> English</li>
-            <li data-subject="computer"><i class="fas fa-laptop"></i> Computer</li>
-            <li data-subject="science"><i class="fas fa-flask"></i> Science</li>
-            <li data-subject="social-science"><i class="fas fa-globe"></i> S.S.T</li>
-            <li data-subject="bengali"><i class="fas fa-language"></i> Bengali</li>
-            <li data-subject="hindi"><i class="fas fa-comment"></i> Hindi</li>
-            <li data-subject="gk"><i class="fas fa-lightbulb"></i> GK</li>
-            <li data-subject="v-edu"><i class="fas fa-heart"></i> V. Edu</li>
-        </ul>
+
+<div class="sidebar">
+    <h2>Subjects</h2>
+    <ul>
+        <li><i class="icon"></i><a href="#english-form">English</a></li>
+        <li><i class="icon"></i><a href="#computer-form">Computer</a></li>
+        <li><i class="icon"></i><a href="#science-form">Science</a></li>
+        <!-- Add more subjects as needed -->
+    </ul>
+</div>
+
+<div class="content">
+    <h2>Subject Forms</h2>
+
+    <!-- English Form -->
+    <div id="english-form">
+        <h3>English</h3>
+        <form action="" method="GET" onsubmit="redirectToPDF(this)">
+            <label for="english-chapter">Select Chapter:</label>
+            <select id="english-chapter" name="chapter">
+                <option value="/class8/english_chapter_1.pdf">Chapter 1</option>
+                <option value="/class8/english_chapter_2.pdf">Chapter 2</option>
+                <option value="/class8/english_chapter_3.pdf">Chapter 3</option>
+                <!-- Add more chapters -->
+            </select>
+            <button type="submit">Go to PDF</button>
+        </form>
     </div>
 
-    
-
-    <div class="content" id="content">
-        <div id="english" class="subject-section">
-            <h2>English</h2>
-            <div class="chapter">
-                <div class="chapter-title">Chapter 1</div>
-                <a href="/class8/english_chapter_1.pdf" class="download-link">Download</a>
-            </div>
-            <!-- Additional English chapters here -->
-        </div>
-
-        <div id="computer" class="subject-section">
-            <h2>Computer</h2>
-            <div class="chapter">
-                <div class="chapter-title">Chapter 1</div>
-                <a href="/class8/computer_chapter_1.pdf" class="download-link">Download</a>
-            </div>
-            <!-- Additional Computer chapters here -->
-        </div>
-
-        <div id="science" class="subject-section">
-            <h2>Science</h2>
-            <div class="chapter">
-                <div class="chapter-title">Chapter 1</div>
-                <a href="/class8/science_chapter_1.pdf" class="download-link">Download</a>
-            </div>
-            <!-- Additional Science chapters here -->
-        </div>
+    <!-- Computer Form -->
+    <div id="computer-form">
+        <h3>Computer</h3>
+        <form action="" method="GET" onsubmit="redirectToPDF(this)">
+            <label for="computer-chapter">Select Chapter:</label>
+            <select id="computer-chapter" name="chapter">
+                <option value="/class8/computer_chapter_1.pdf">Chapter 1</option>
+                <option value="/class8/computer_chapter_2.pdf">Chapter 2</option>
+                <option value="/class8/computer_chapter_3.pdf">Chapter 3</option>
+                <!-- Add more chapters -->
+            </select>
+            <button type="submit">Go to PDF</button>
+        </form>
     </div>
 
-    <script>
-        const sidebar = document.getElementById('sidebar');
-        const toggleBtn = document.getElementById('toggle-btn');
-        const content = document.getElementById('content');
+    <!-- Science Form -->
+    <div id="science-form">
+        <h3>Science</h3>
+        <form action="" method="GET" onsubmit="redirectToPDF(this)">
+            <label for="science-chapter">Select Chapter:</label>
+            <select id="science-chapter" name="chapter">
+                <option value="/class8/science_chapter_1.pdf">Chapter 1</option>
+                <option value="/class8/science_chapter_2.pdf">Chapter 2</option>
+                <option value="/class8/science_chapter_3.pdf">Chapter 3</option>
+                <!-- Add more chapters -->
+            </select>
+            <button type="submit">Go to PDF</button>
+        </form>
+    </div>
 
-        toggleBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('collapsed');
-            content.classList.toggle('collapsed');
-            toggleBtn.classList.toggle('collapsed');
-        });
+    <!-- Add more forms for other subjects similarly -->
 
-        const subjectButtons = document.querySelectorAll('.sidebar ul li');
-        subjectButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const subject = button.getAttribute('data-subject');
-                document.querySelectorAll('.subject-section').forEach(section => {
-                    section.style.display = 'none';
-                });
-                document.getElementById(subject).style.display = 'block';
-            });
-        });
+</div>
 
-        // By default, hide all subjects and show only English
-        document.querySelectorAll('.subject-section').forEach(section => {
-            section.style.display = 'none';
-        });
-        document.getElementById('english').style.display = 'block';
-    </script>
+<script>
+// Function to redirect based on selected chapter
+function redirectToPDF(form) {
+    const chapter = form.chapter.value;
+    window.location.href = chapter;
+    return false; // Prevent actual form submission
+}
+</script>
+
 </body>
-                                         </html>
+</html>
